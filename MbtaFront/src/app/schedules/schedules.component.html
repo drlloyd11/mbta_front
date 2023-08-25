@@ -1,2 +1,7 @@
-<p>schedules works!</p>{{cur_schedule}}
+<p>List of Stops</p>
 
+
+  <tr *ngFor=" let stop in stopList">
+    <td>{{stop}}</td>
+</tr>
+{{stopList}}

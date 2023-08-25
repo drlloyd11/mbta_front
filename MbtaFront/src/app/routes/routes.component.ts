@@ -8,4 +8,5 @@ import { Component , Input,  EventEmitter} from '@angular/core';
 export class RoutesComponent {
   constructor(){}
   @Input() cur_routes ='';
+  @Input() routeList = [];
 }

@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   mbtaBusRoutes:string = "";
   loadingMsg:string="loading"
   rawRoutes:string= "";
-  ids: string[] =[];
+  routeList: string[] =[];
+  stopList: string[] = [];
   
   switchTab(tab: string) {
     this.tab = tab;
@@ -28,12 +29,14 @@ export class AppComponent implements OnInit {
             this.mbtaSubwayRoutes =this.rawRoutes
             this.mbtaBusRoutes = this.rawRoutes;
             for(let result of data.data){
-              this.ids.push(result);
-              console.log(result);
+              this.routeList.push(result.attributes);
            }
         });
         this.http.get<any>('https://api-v3.mbta.com/stops').subscribe(data => {
           this.mbtaSchedule = JSON.stringify(data.data);
+          for(let result of data.data){
+            this.stopList.push(result.attributes);
+         }
       });
       this.loadingMsg = ""
     }

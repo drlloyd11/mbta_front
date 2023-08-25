@@ -7,6 +7,9 @@ import { Component , Input,  EventEmitter } from '@angular/core';
 })
 export class SchedulesComponent {
   constructor(){}
+  
+  Object = Object;
   @Input() cur_schedule ='';
+  @Input() stopList =[];
 
 }
