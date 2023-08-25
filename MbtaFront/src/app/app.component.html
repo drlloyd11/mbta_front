@@ -1,0 +1,20 @@
+<div class="container" [ngSwitch]="tab">
+	<h3>Tabs</h3>
+	<ul class="nav nav-tabs">
+		<li class=" nav-item">
+			<a (click)="switchTab('about')"
+       class="nav-link" 
+        [ngClass]="{active:tab==='about'}"
+       href="#">About</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="nav-link" 
+      [ngClass]="{active:tab==='contact'}"
+
+      (click)="switchTab('contact')">Contact Us</a>
+		</li>
+
+	</ul>
+	<app-routes *ngSwitchCase="'about'"> </app-routes>
+	<app-schedules *ngSwitchCase="'contact'"> </app-schedules>
+</div>
