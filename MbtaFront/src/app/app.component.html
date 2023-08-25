@@ -1,20 +1,30 @@
 <div class="container" [ngSwitch]="tab">
+	{{loadingMsg}}
 	<h3>Tabs</h3>
 	<ul class="nav nav-tabs">
 		<li class=" nav-item">
-			<a (click)="switchTab('about')"
+			<a (click)="switchTab('routes')"
        class="nav-link" 
-        [ngClass]="{active:tab==='about'}"
-       href="#">About</a>
+        [ngClass]="{active:tab==='routes'}"
+       href="#">Subway Routes</a>
+		</li>
+		<li class=" nav-item">
+			<a (click)="switchTab('bus_routes')"
+       class="nav-link" 
+        [ngClass]="{active:tab==='bus_routes'}"
+       href="#">Bus Routes</a>
 		</li>
 		<li class="nav-item">
 			<a href="#" class="nav-link" 
-      [ngClass]="{active:tab==='contact'}"
+      [ngClass]="{active:tab==='stops'}"
 
-      (click)="switchTab('contact')">Contact Us</a>
+      (click)="switchTab('stops')">stops</a>
 		</li>
 
 	</ul>
-	<app-routes *ngSwitchCase="'about'"> </app-routes>
-	<app-schedules *ngSwitchCase="'contact'"> </app-schedules>
+	
+	<app-routes [cur_routes] ='mbtaSubwayRoutes' *ngSwitchCase="'routes'"> </app-routes>
+	<app-schedules [cur_schedule] = 'mbtaSchedule' *ngSwitchCase="'stops'"> </app-schedules>
+	<app-bus-routs [cur_routes] = 'mbtaSchedule' *ngSwitchCase="'bus_routes'"> </app-bus-routs>
+
 </div>

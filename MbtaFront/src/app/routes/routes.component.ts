@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input,  EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-routes',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./routes.component.css']
 })
 export class RoutesComponent {
-
+  constructor(){}
+  @Input() cur_routes ='';
 }

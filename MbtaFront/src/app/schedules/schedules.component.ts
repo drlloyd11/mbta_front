@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input,  EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-schedules',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./schedules.component.css']
 })
 export class SchedulesComponent {
+  constructor(){}
+  @Input() cur_schedule ='';
 
 }
